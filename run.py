@@ -86,7 +86,7 @@ def create_anki_model(model_name):
             "action": "createModel",
             "version": 6,
             "params": {
-                "modelName": "Inaturalist2",
+                "modelName": model_name,
                 "inOrderFields": [
                     "Name",
                     "Scientific Name",
@@ -192,10 +192,10 @@ if __name__ == "__main__":
             if "/taxa" in url:
                 taxon = download_taxon(url)
                 if taxon:
-                    create_anki_card(taxon, args.anki_deck, args.anki_model, args.tags)
+                    create_anki_card(taxon, args.anki_deck, args.anki_model, args.anki_tags)
             elif "/observations" in url:
-                for taxon in tqdm(download_species_list(url), desc="species"):
+                for taxon in tqdm.tqdm(download_species_list(url), desc="species"):
                     assert taxon  # tqdm seems to screw up type
-                    create_anki_card(taxon, args.anki_deck, args.anki_model, args.tags)
+                    create_anki_card(taxon, args.anki_deck, args.anki_model, args.anki_tags)
         except Exception:
             logging.warning("unable to process %s", url, exc_info=True)

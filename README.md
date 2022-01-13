@@ -13,6 +13,9 @@ adding it to Anki through
 
 ## Generating notes
 
+_Before running this script, back up your Anki database and read it and
+understand what this script does. This script does not come with any warranty._
+
 1. Launch Anki with Anki-Connect running
 1. Find either a `/taxa` or `/observation` page like to download
 1. Run script to automatically create model and notes
