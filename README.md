@@ -7,7 +7,7 @@ adding it to Anki through
 
 ## Installation
 
-1. clone this repo
+1. Clone this repo
 1. `pip install -r requirements.txt`
 1. Install [Anki-Connect](https://github.com/FooSoft/anki-connect/)
 
